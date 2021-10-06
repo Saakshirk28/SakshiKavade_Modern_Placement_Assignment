@@ -2,20 +2,16 @@
 
 int main()
 {
-    int i, j, end, sum;
-
-    
-    printf("Enter starting no: ");
+    int i, j, start, end, sum;
+    printf("Enter lower limit: ");
+    scanf("%d", &start);
+    printf("Enter upper limit: ");
     scanf("%d", &end);
 
-    printf("All Perfect numbers between 1 to %d:\n", end);
-    
-    
-    for(i=1; i<=end; i++)
+    printf("All Perfect numbers between %d to %d:\n", start, end);
+    for(i=start; i<=end; i++)
     {
         sum = 0;
-
-        
         for(j=1; j<i; j++)
         {
             if(i % j == 0)
@@ -23,8 +19,6 @@ int main()
                 sum += j;
             }
         }
- 
-        
         if(sum == i)
         {
             printf("%d, ", i);
